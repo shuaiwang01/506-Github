@@ -1,0 +1,267 @@
+---
+title: "Code Portfolio"
+author: "Shuai Wang"
+date: "2019/4/05"
+output: html_document
+---
+
+Data Import
+
+```{r}
+getwd()
+##returns a character string or NULL if the working directory is not available. On Windows the path returned will use / as the path separator???
+
+setwd(dir)
+##dir ??? Specify a working directory. This may be from the root directory (starting with / on a Mac), it may include a double-dot (..) to move locally up a folder from the current directory, and it may include a path from the current directory.
+
+ls()
+##return a vector of character strings giving the names of the objects in the specified environment.
+
+load()
+##Load data from the server 
+
+rm()
+##remove and rm can be used to remove objects. These can be specified successively as character strings, or in the character vector list , or through a combination of both. All objects thus specified will be removed. 
+
+read.table()
+##Reads a file in table format and creates a data frame from it, with cases corresponding to lines and variables to fields in the file.
+
+read_csv()
+##useful for reading the most common types of flat file data, comma separated values and tab separated values
+
+save()
+##writes an external representation of R objects to the specified file. The objects can be read back from the file at a later date by using the function load or attach 
+
+save.image()
+##a short-cut for ???save my current workspace???
+
+read_log()
+##a fairly standard format for log files - it uses both quotes and square brackets for quoting, and there may be literal quotes embedded in a quoted string. The dash, "-", is used for missing values.
+
+parse()
+##returns the parsed but unevaluated expressions in a list.
+
+charToRaw()
+##accepts raw, integer or logical inputs, the last two without any NAs.
+
+parse_datetime()
+##sometimes calls error, the error seems to come from calling localtime()
+
+parse_date()
+##A character vector of dates to parse.
+
+guess_parser()
+## is used for route extraction by the GuessPlugin. The module exports several functions.
+
+problems()
+##throw an error if parsing fails in an unrecoverable way.
+
+tail()
+##returns the last n rows of a matrix or data frame in R.
+
+guess_encoding()
+##A character string specifying an input as specified in datasource(), a raw vector, or a list of raw vectors.
+
+parse_factor()
+##similar to factor(), but will generate warnings if elements of x are not found in levels.
+
+write.table()
+##prints its required argument x (after converting it to a data frame if it is not one nor a matrix) to a file or connection.
+
+```
+
+Data Wrangling
+
+```{r}
+gather()
+##Gather takes multiple columns and collapses into key-value pairs, duplicating all other columns as needed. You use gather() when you notice that you have columns that are not variables.
+
+select()
+##keeps only the variables you mention; rename() keeps all variables.
+
+spread()
+##Spread a key-value pair across multiple columns.
+
+separate()
+##Given either regular expression or a vector of character positions, separate() turns a single character column into multiple columns.
+
+unite()
+##Convenience function to paste together multiple columns into one.
+
+fill()
+##Fills missing values in selected columns using the previous entry. This is useful in the common output format where values are not repeated, they're recorded each time they change.
+
+cbind()
+##Take a sequence of vector, matrix or data-frame arguments and combine by columns or rows, respectively. These are generic functions with methods for other R classes.
+
+rbind()
+##combines vector, matrix or data frame by rows.
+
+matrix()
+##creates a matrix from the given set of values.
+
+data.frame()
+##creates data frames, tightly coupled collections of variables which share many of the properties of matrices and of lists, used as the fundamental data structure by most of R's modeling software.
+
+head()
+##returns the first n rows of a matrix or data frame in R.
+
+summary()
+##generic function used to produce result summaries of the results of various model fitting functions. The function invokes particular methods which depend on the class of the first argument.
+
+names()
+##get or set the names of an object.
+
+subset()
+##Return subsets of vectors, matrices or data frames which meet conditions.
+
+with()
+##Evaluate an R expression in an environment constructed from data, possibly modifying (a copy of) the original data.
+
+as_tibble()
+##a thin wrapper around data.frame, and hence is rather slow (because it calls data.frame() on each element before cbinding together). as_tibble is a new S3 generic with more efficient methods for matrices and data frames.
+
+tibble()
+## a nice way to create data frames. It encapsulates best practices for data frames.
+
+str()
+##Compactly display the internal structure of an R object, a diagnostic function and an alternative to summary (and to some extent, dput)
+
+as.data.frame()
+##functions to check if an object is a data frame, or coerce it if possible
+
+mutate()
+##adds new variables and preserves existing; transmute drops existing variables.
+```
+
+Data Visualization
+
+```{r}
+ggplot2()
+##a system for declaratively creating graphics, based on The Grammar of Graphics. You provide the data, tell ggplot2 how to map variables to aesthetics, what graphical primitives to use, and it takes care of the details.
+
+geom_point
+## used to create scatterplots.
+
+geom_boxplot
+##displays the distribution of a continuous variable. It visualises five summary statistics (the median, two hinges and two whiskers), and all "outlying" points individually.
+
+facet_wrap()
+##wraps a 1d sequence of panels into 2d. This is generally a better use of screen space than facet_grid() because most displays are roughly rectangular.
+
+facet_grid()
+##Lay out panels in a grid
+
+geom_bar()
+##makes the height of the bar proportional to the number of cases in each group (or if the weight aesthetic is supplied, the sum of the weights). 
+
+stat_count()
+##specified y values is geom_col()
+
+stat_summary()
+##operates on unique x; stat_summary_bin operates on binned x. They are more flexible versions of stat_bin(): instead of just counting, they can compute any aggregate.
+
+stat_bin()
+##Missing values are currently silently dropped.
+
+geom_col()
+##the heights of the bars to represent values in the data
+
+aes()
+##Aesthetic mappings describe how variables in the data are mapped to visual properties (aesthetics) of geoms. Aesthetic mappings can be set in ggplot2() and in individual layers.
+
+coord_quickmap()
+##account for the fact that the actual length (in km) of one degree of longitude varies between the equator and the pole. 
+
+coord_flip()
+##Flip cartesian coordinates so that horizontal becomes vertical, and vertical, horizontal. This is primarily useful for converting geoms and statistics which display y conditional on x, to x conditional on y.
+
+coord_polar()
+##most commonly used for pie charts, which are a stacked bar chart in polar coordinates.
+
+fivenum()
+##Returns Tukey's five number summary (minimum, lower-hinge, median, upper-hinge, maximum) for the input data.
+
+boxplot()
+##Produce box-and-whisker plot(s) of the given (grouped) values. 
+
+hist()
+##The generic function hist computes a histogram of the given data values. If plot = TRUE, the resulting object of class "histogram" is plotted by plot.histogram, before it is returned.
+
+rug()
+##Adds a rug representation (1-d plot) of the data to the plot.
+
+abline()
+##An easy way to add straight lines to a plot using R software
+
+filter()
+##find rows/cases where conditions are true. Unlike base subsetting with [, rows where the condition evaluates to NA are dropped.
+```
+
+Data Analysis
+
+```{r}
+str()
+##Compactly display the internal structure of an R object, a diagnostic function and an alternative to summary (and to some extent, dput)
+
+set.seed()
+##useful for creating simulations or random objects that can be reproduced. 
+
+kmeans()
+##Perform k-means clustering on a data matrix.
+
+as.data.frame()
+##functions to check if an object is a data frame, or coerce it if possible
+
+mutate()
+##adds new variables and preserves existing; transmute drops existing variables.
+
+pdf()
+##starts the graphics device driver for producing PDF graphics.
+
+dev.copy()
+##copies the graphics contents of the current device to the device specified by which or to a new device which has been created by the function specified by device 
+
+dev.off()  
+##closes the specified plot (by default the current device) and if it is an imguR device, uploads the plots for web hosting
+
+title()
+##can be used to add labels to a plot. Its first four principal arguments can also be used as arguments in most high-level plotting functions. They must be of type character or expression
+
+image()
+##Creates a grid of colored or gray-scale rectangles with colors corresponding to the values in z. This can be used to display three-dimensional or spatial data aka images. This is a generic function.
+
+nrow()
+##returns the number of rows that are present in a data frame or matrix.
+
+ncol()
+## returns the number of columns in x@data. I.e. the number of columns with additional information to each spectrum (e.g. "x", "y", 
+
+gap_stat()
+##calculates a goodness of clustering measure, the ???gap??? statistic. 
+
+hclust()
+##Hierarchical cluster analysis on a set of dissimilarities and methods for analyzing it.
+
+plot()
+##Generic function for plotting of R objects. For more details about the graphical parameter arguments.
+
+qplot()
+##a shortcut designed to be familiar if you're used to base plot(). It's a convenient wrapper for creating a number of different types of plots using a consistent calling scheme. 
+
+xyplot()
+##designed mainly for two continuous variates (though factors can be supplied as well, in which case they will simply be coerced to numeric), 
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
