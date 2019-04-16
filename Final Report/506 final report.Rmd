@@ -1,0 +1,53 @@
+---
+title: "506 final project"
+author: "Shuai Wang"
+date: "2019/4/12"
+output: html_document
+---
+
+# Final Report
+
+###Github Link
+https://github.com/shuaiwang01/506-Github/tree/master/Final%20Report
+
+```{r}
+bikeVendors <- read.csv("~/Desktop/506/bikeVendors.csv")
+```
+
+Number of columns:
+```{r}
+ncol(bikeVendors)
+```
+
+Number of rows:
+```{r}
+nrow(bikeVendors)
+```
+
+```{r}
+str(bikeVendors)
+```
+
+##Hypo
+###Is there an association between category1 and sales data?
+###Is there an association between category2 and sales data?
+###Is there an association between frame and sales data?
+###Is there an association between price and sales data?
+
+```{r}
+library(dplyr)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
